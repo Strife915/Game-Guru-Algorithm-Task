@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace GameGuruGridTask.Grids
@@ -33,14 +32,23 @@ namespace GameGuruGridTask.Grids
 
         public void OnClickEvent()
         {
-            Debug.Log(gridPosition.X + " " + gridPosition.Y);
             _clicked = !_clicked;
+            if (_clicked)
+                GridManager.instance.HandleClick(this);
+            if (!_clicked)
+                GridManager.instance.clickedObjectCount--;
             ChangeImageColor();
         }
 
         void ChangeImageColor()
         {
             gridImage.color = _clicked ? Color.green : Color.blue;
+        }
+
+        public void ResetObject()
+        {
+            _clicked = false;
+            gridImage.color = Color.blue;
         }
     }
 }

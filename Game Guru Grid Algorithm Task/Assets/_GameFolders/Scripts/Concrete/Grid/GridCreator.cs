@@ -63,8 +63,13 @@ namespace GameGuruGridTask.Grids
 
         void CheckSize()
         {
-            if (size < 3)
-                size = 3;
+            size = Mathf.Max(size, 3);
+        }
+
+
+        public GridObject GetGridObjectAt(int x, int y)
+        {
+            return x >= 0 && x < size && y >= 0 && y < size ? gridObjects[x, y] : null;
         }
     }
 }
