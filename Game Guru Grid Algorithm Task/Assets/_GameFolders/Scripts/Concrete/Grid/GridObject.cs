@@ -22,5 +22,10 @@ namespace GameGuruGridTask.Grids
         {
             gridImage.rectTransform.sizeDelta = newSize;
         }
+
+        public void OnClickEvent()
+        {
+            Debug.Log(gridPosition.X + " " + gridPosition.Y);
+        }
     }
 }

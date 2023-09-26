@@ -5,7 +5,10 @@ namespace GameGuruGridTask.Grids
     public class GridCreator : MonoBehaviour
     {
         bool _isPortrait;
-        [Tooltip("Should be greater than 3")] public int size;
+
+        [Tooltip("Should be greater than 3, if you enter less than 3 it will automatically set to 3")]
+        public int size;
+
         public GridObject gridObjectPrefab;
         public RectTransform gridPanelRectTransform;
         public GridObject[,] gridObjects;
@@ -13,6 +16,7 @@ namespace GameGuruGridTask.Grids
 
         void Awake()
         {
+            CheckSize();
             SetGridPanelTransform();
             CreateGrid();
         }
@@ -55,6 +59,12 @@ namespace GameGuruGridTask.Grids
             var spacing = Offset * (size - 1);
             var panelSize = gridPanelRectTransform.sizeDelta - new Vector2(spacing, spacing);
             return panelSize / size;
+        }
+
+        void CheckSize()
+        {
+            if (size < 3)
+                size = 3;
         }
     }
 }

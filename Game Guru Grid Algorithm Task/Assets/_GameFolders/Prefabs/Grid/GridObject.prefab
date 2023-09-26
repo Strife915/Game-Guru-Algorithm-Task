@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2422636160257849570}
   - component: {fileID: 3251963826382378787}
   - component: {fileID: 2016772980084649392}
+  - component: {fileID: 3441409508411809805}
   m_Layer: 5
   m_Name: GridObject
   m_TagString: Untagged
@@ -60,6 +61,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridImage: {fileID: 6239079969555668479}
+--- !u!114 &3441409508411809805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558557496197325240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2016772980084649392}
+          m_TargetAssemblyTypeName: GameGuruGridTask.Grids.GridObject, Assembly-CSharp
+          m_MethodName: OnClickEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5254114827281539774
 GameObject:
   m_ObjectHideFlags: 0
