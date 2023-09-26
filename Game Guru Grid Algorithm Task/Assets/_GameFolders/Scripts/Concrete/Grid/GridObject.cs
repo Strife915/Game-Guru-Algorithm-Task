@@ -1,12 +1,26 @@
-﻿namespace GameGuruGridTask.Grids
-{
-    public class GridObject
-    {
-        GridStruct _gridStruct;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-        public GridObject(GridStruct gridStruct)
+namespace GameGuruGridTask.Grids
+{
+    public class GridObject : MonoBehaviour
+    {
+        public GridStruct gridPosition;
+        public Image gridImage;
+
+        public void SetGridPosition(int x, int y)
         {
-            _gridStruct = gridStruct;
+            gridPosition = new GridStruct(x, y);
+        }
+
+        public GridStruct GetGridPosition()
+        {
+            return gridPosition;
+        }
+
+        public void SetGridImageSize(Vector2 newSize)
+        {
+            gridImage.rectTransform.sizeDelta = newSize;
         }
     }
 }

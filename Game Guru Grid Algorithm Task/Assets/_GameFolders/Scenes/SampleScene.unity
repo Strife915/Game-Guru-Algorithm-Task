@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!224 &60225679 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c,
-    type: 3}
-  m_PrefabInstance: {fileID: 828100853}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +176,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -207,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: -3.144017, y: -0.8755932, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -369,38 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 303481548, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1907342996021556921, guid: 3bae5f842ac0a0048840e7de8060088c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -511,11 +473,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseCanvas Variant - Grid Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8436269839860292815, guid: 3bae5f842ac0a0048840e7de8060088c,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bae5f842ac0a0048840e7de8060088c, type: 3}
 --- !u!1 &832575517
@@ -567,27 +524,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1784413011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4478162685340332519, guid: 3bae5f842ac0a0048840e7de8060088c,
-    type: 3}
-  m_PrefabInstance: {fileID: 828100853}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1784413016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784413011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9b6e079c52419db435efb65c650886, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _size: 0
-  _gridObjectPrefab: {fileID: 0}
-  _gridPanelRectTransform: {fileID: 60225679}
 --- !u!1 &1983505585
 GameObject:
   m_ObjectHideFlags: 0

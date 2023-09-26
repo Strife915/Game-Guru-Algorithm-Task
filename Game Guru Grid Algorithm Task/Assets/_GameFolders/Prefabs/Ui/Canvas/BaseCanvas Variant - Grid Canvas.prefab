@@ -33,11 +33,11 @@ RectTransform:
   m_Father: {fileID: 1907342996021556921}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 550.00037}
-  m_SizeDelta: {x: 0, y: -1099.9993}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -135}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &303481550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -201,3 +201,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 234793420216462617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4478162685340332519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4424652919975402750, guid: 08636b74cc1ff7a43b2ff99a169ed663,
+    type: 3}
+  m_PrefabInstance: {fileID: 234793420216462617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784413016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478162685340332519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9b6e079c52419db435efb65c650886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 10
+  gridObjectPrefab: {fileID: 2016772980084649392, guid: 5614aca22f5e40946b46629af2e1560c,
+    type: 3}
+  gridPanelRectTransform: {fileID: 303481548}
+  gridPositions: []
+  Offset: 10

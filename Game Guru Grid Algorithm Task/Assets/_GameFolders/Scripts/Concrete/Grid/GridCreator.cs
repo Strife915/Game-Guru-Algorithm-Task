@@ -4,48 +4,57 @@ namespace GameGuruGridTask.Grids
 {
     public class GridCreator : MonoBehaviour
     {
-        [Tooltip("Should be greater than 1")]
-        [SerializeField] int _size;
-        [SerializeField] GameObject _gridObjectPrefab;
-        [SerializeField] RectTransform _gridPanelRectTransform;
-        GridObject[,] _gridObjects;
+        bool _isPortrait;
+        [Tooltip("Should be greater than 3")] public int size;
+        public GridObject gridObjectPrefab;
+        public RectTransform gridPanelRectTransform;
+        public GridObject[,] gridObjects;
+        public float Offset;
+
         void Awake()
         {
-            GenerateGrid();
-            // Debug.Log(Screen.width);
-            // Debug.Log(Screen.height);
-            // float screenWidth = Screen.width;
-            // float screenHeight = Screen.height;
-            // float cellSize = Mathf.Min(screenWidth, screenHeight) / (_size * 2);
-            // Debug.Log(cellSize);
+            SetGridPanelTransform();
+            CreateGrid();
         }
 
-        void GenerateGrid()
-        {
-            SetGridPanelTransform();
-            // _gridObjects = new GridObject[_size,_size];
-            // for (int x = 0; x < _size; x++)
-            // {
-            //     for (int z = 0; z < _size; z++)
-            //     {
-            //         GridStruct gridPosition = new GridStruct(x, z);
-            //         _gridObjects[x,z] = new GridObject(gridPosition);
-            //     } 
-            // }
-        }
 
         void SetGridPanelTransform()
         {
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
-
-            Vector2 panelSize = new Vector2(screenWidth, screenHeight / 2);
-            _gridPanelRectTransform.sizeDelta = panelSize;
-
-            float yOffset = 75f;
-            Vector3 panelPosition = new Vector3(0, (screenHeight / 4) - yOffset, 0);
-            _gridPanelRectTransform.localPosition = panelPosition;
+            var isPortrait = Screen.width < Screen.height;
+            float size = isPortrait ? Screen.width : Screen.height / 2;
+            var panelSize = new Vector2(size, size);
+            gridPanelRectTransform.sizeDelta = panelSize;
         }
 
+        void CreateGrid()
+        {
+            gridObjects = new GridObject[size, size];
+            var imageSize = CalculateImageGridObjectImageSize();
+            var spacing = imageSize.x + Offset;
+
+            for (var y = 0; y < size; y++)
+            for (var x = 0; x < size; x++)
+            {
+                var gridObject = Instantiate(gridObjectPrefab, gridPanelRectTransform);
+                var rectTransform = gridObject.GetComponent<RectTransform>();
+                rectTransform.sizeDelta = imageSize;
+                gridObject.SetGridImageSize(imageSize);
+
+                var xOffset = x * spacing;
+                var yOffset = -y * spacing;
+                rectTransform.anchoredPosition = new Vector2(xOffset, yOffset);
+
+                gridObject.SetGridPosition(x, y);
+                gridObjects[x, y] = gridObject;
+            }
+        }
+
+
+        Vector2 CalculateImageGridObjectImageSize()
+        {
+            var spacing = Offset * (size - 1);
+            var panelSize = gridPanelRectTransform.sizeDelta - new Vector2(spacing, spacing);
+            return panelSize / size;
+        }
     }
 }
