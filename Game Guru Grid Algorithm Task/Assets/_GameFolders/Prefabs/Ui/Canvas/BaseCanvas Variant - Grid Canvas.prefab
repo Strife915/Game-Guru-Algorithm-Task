@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9b6e079c52419db435efb65c650886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1
+  size: 5
   gridObjectPrefab: {fileID: 2016772980084649392, guid: 5614aca22f5e40946b46629af2e1560c,
     type: 3}
   gridPanelRectTransform: {fileID: 303481548}
